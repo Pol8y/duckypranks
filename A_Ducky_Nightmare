@@ -46,6 +46,7 @@ ENTER
 DELAY 200
 STRING rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True; exit
 ENTER
+GUI D
 
 
 REM --Reverting Requires "attrib -s -h *" to be run with powershell from C:\--
