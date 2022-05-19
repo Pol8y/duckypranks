@@ -46,7 +46,7 @@ STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Valu
 ENTER
 STRING rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True; exit
 ENTER
-GUI D
+GUI d
 
 
 REM --Reverting Requires "attrib -s -h *" to be run with powershell from C:\--
