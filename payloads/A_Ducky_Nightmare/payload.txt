@@ -6,7 +6,7 @@ REM Version: 1.0
 REM Category: Prank
 
 
-REM -- Open Powershell --
+REM -- Open Powershell As Admin--
 
 DELAY 1000
 GUI r
