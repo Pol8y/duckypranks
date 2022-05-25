@@ -13,7 +13,7 @@ GUI r
 DELAY 350
 STRING powershell
 CTRL-SHIFT ENTER
-DELAY 1000
+DELAY 2000
 
 REM --Start Powershell With Modified Window's Height & Width to 1 & Exit Current Shell--
 
